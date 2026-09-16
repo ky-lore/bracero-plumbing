@@ -64,6 +64,8 @@ h3{font-size:1.25rem}
 /* ---------- Hero ---------- */
 .hero{position:relative;color:var(--white);background:linear-gradient(rgba(20,16,10,.68),rgba(20,16,10,.84)),url('https://images.unsplash.com/photo-1676210134188-4c05dd172f89?q=80&w=1800&auto=format&fit=crop') center/cover no-repeat;
   padding:clamp(4rem,11vw,8rem) 0}
+.hero-inner{background:linear-gradient(rgba(20,16,10,.72),rgba(20,16,10,.88)),url('https://images.unsplash.com/photo-1673870861507-d72aa6855d89?q=80&w=1800&auto=format&fit=crop') center/cover no-repeat;
+  padding:clamp(2.6rem,7vw,4.5rem) 0}
 .hero-content{max-width:780px}
 .hero-eyebrow{font-family:var(--font-head);text-transform:uppercase;letter-spacing:.12em;color:var(--orange);font-weight:600;margin-bottom:1rem}
 .hero h1{font-size:clamp(2.1rem,5.2vw,3.7rem);margin-bottom:1.1rem}
