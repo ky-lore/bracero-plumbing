@@ -34,30 +34,61 @@ h3{font-size:1.25rem}
 /* ---------- Buttons ---------- */
 .btn{display:inline-block;font-family:var(--font-head);text-transform:uppercase;letter-spacing:.04em;font-weight:600;
   padding:.85rem 1.6rem;border-radius:8px;cursor:pointer;border:2px solid transparent;transition:.2s;font-size:.95rem}
-.btn-primary{background:var(--orange);color:var(--charcoal)}
-.btn-primary:hover{background:var(--orange-dark);transform:translateY(-2px)}
+.btn-primary{background:var(--orange);color:var(--charcoal);box-shadow:0 6px 18px rgba(237,130,50,.35)}
+.btn-primary:hover{background:var(--orange-dark);transform:translateY(-2px);box-shadow:0 10px 26px rgba(237,130,50,.5)}
 .btn-outline{background:transparent;border-color:var(--white);color:var(--white)}
 .btn-outline:hover{background:var(--white);color:var(--charcoal)}
 .btn-ghost{background:transparent;color:var(--gray);padding-left:.5rem}
 .btn-ghost:hover{color:var(--charcoal)}
 .btn-block{width:100%;text-align:center}
-.btn-lg{font-size:1.1rem;padding:1.05rem 2rem}
+.btn-lg{font-size:1.28rem;padding:1.3rem 2.4rem;border-radius:10px}
 .btn .icon{width:18px;height:18px;vertical-align:-3px;margin-right:.4rem;fill:currentColor}
+.btn-lg .icon{width:24px;height:24px}
 .icon{width:20px;height:20px}
+
+/* ---------- Call CTAs: loud + pulsing ---------- */
+@keyframes callPulseRing{
+  0%{box-shadow:0 6px 18px rgba(237,130,50,.4),0 0 0 0 rgba(237,130,50,.55)}
+  70%{box-shadow:0 6px 18px rgba(237,130,50,.4),0 0 0 18px rgba(237,130,50,0)}
+  100%{box-shadow:0 6px 18px rgba(237,130,50,.4),0 0 0 0 rgba(237,130,50,0)}
+}
+@keyframes callWiggle{
+  0%,88%,100%{transform:rotate(0)}
+  90%{transform:rotate(-8deg)}
+  92%{transform:rotate(7deg)}
+  94%{transform:rotate(-5deg)}
+  96%{transform:rotate(3deg)}
+}
+.btn-call{
+  position:relative;
+  animation:callPulseRing 1.9s ease-out infinite;
+  font-weight:800;
+  letter-spacing:.05em;
+}
+.btn-call:hover{animation-play-state:paused}
+.btn-call .icon{animation:callWiggle 2.6s ease-in-out infinite}
+@media(prefers-reduced-motion:reduce){
+  .btn-call,.btn-call .icon{animation:none}
+}
 
 /* ---------- Header ---------- */
 .site-header{position:sticky;top:0;z-index:50;background:rgba(26,22,18,.97);backdrop-filter:blur(6px);border-bottom:3px solid var(--orange)}
 .header-inner{display:flex;align-items:center;justify-content:space-between;gap:1rem;height:74px}
 .brand-logo{height:46px;width:auto}
-.header-phone{display:flex;align-items:center;gap:.5rem;color:var(--orange);font-family:var(--font-head);font-weight:600;font-size:1.05rem;letter-spacing:.02em;margin-left:auto}
-.header-phone .icon{width:18px;height:18px}
-.header-phone-label{display:block;font-size:.68rem;text-transform:uppercase;letter-spacing:.1em;color:#cfc8bc;font-weight:500}
-.header-phone:hover{color:var(--white)}
+.header-phone{display:flex;align-items:center;gap:.6rem;color:var(--charcoal);font-family:var(--font-head);font-weight:800;font-size:1.1rem;letter-spacing:.02em;margin-left:auto;
+  background:var(--orange);padding:.5rem 1rem;border-radius:999px;box-shadow:0 6px 16px rgba(237,130,50,.4);
+  animation:callPulseRing 2.2s ease-out infinite}
+.header-phone .icon{width:19px;height:19px;animation:callWiggle 2.6s ease-in-out infinite}
+.header-phone-label{display:block;font-size:.66rem;text-transform:uppercase;letter-spacing:.1em;color:rgba(26,22,18,.7);font-weight:700}
+.header-phone:hover{background:var(--orange-dark);color:var(--charcoal);animation-play-state:paused}
+@media(prefers-reduced-motion:reduce){.header-phone,.header-phone .icon{animation:none}}
 .nav-list{list-style:none;display:flex;align-items:center;gap:1.6rem}
 .nav-list a{color:#f3efe8;font-family:var(--font-head);text-transform:uppercase;font-size:.92rem;letter-spacing:.05em;font-weight:500;transition:.2s}
 .nav-list a:hover{color:var(--orange)}
-.nav-cta{background:var(--orange);color:var(--charcoal)!important;padding:.55rem 1.1rem;border-radius:6px}
-.nav-cta:hover{background:var(--orange-dark)}
+.nav-cta{background:var(--orange);color:var(--charcoal)!important;padding:.55rem 1.1rem;border-radius:6px;font-weight:800;
+  animation:callPulseRing 2.2s ease-out infinite}
+.nav-cta:hover{background:var(--orange-dark);animation-play-state:paused}
+@media(prefers-reduced-motion:reduce){.nav-cta{animation:none}}
 .nav-toggle{display:none;flex-direction:column;gap:5px;background:none;border:0;cursor:pointer;padding:6px}
 .nav-toggle span{width:26px;height:3px;background:var(--orange);border-radius:2px;transition:.3s}
 
@@ -235,8 +266,15 @@ h3{font-size:1.25rem}
 .footer-bottom p{font-size:.85rem;color:#9a9389}
 
 /* ---------- Mobile sticky call ---------- */
+@keyframes mobileCallGlow{
+  0%,100%{box-shadow:0 -4px 14px rgba(0,0,0,.3),0 0 0 0 rgba(237,130,50,.6)}
+  50%{box-shadow:0 -4px 14px rgba(0,0,0,.3),0 0 22px 4px rgba(237,130,50,.85)}
+}
 .mobile-call{display:none;position:fixed;bottom:0;left:0;right:0;z-index:60;background:var(--orange);color:var(--charcoal);
-  text-align:center;font-family:var(--font-head);text-transform:uppercase;letter-spacing:.06em;font-weight:600;padding:.95rem;box-shadow:0 -4px 14px rgba(0,0,0,.2)}
+  text-align:center;font-family:var(--font-head);text-transform:uppercase;letter-spacing:.06em;font-weight:800;
+  font-size:1.15rem;padding:1.15rem;box-shadow:0 -4px 14px rgba(0,0,0,.3);animation:mobileCallGlow 1.8s ease-in-out infinite;
+  border-top:2px solid var(--white)}
+@media(prefers-reduced-motion:reduce){.mobile-call{animation:none}}
 
 /* ===================================================================
    Responsive
