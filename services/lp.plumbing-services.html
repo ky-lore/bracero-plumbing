@@ -74,7 +74,7 @@
    =================================================================== */
 :root{
   --gold:#ED8232;
-  --gold-dark:#B85A15;
+  --gold-dark:#C6631A;
   --charcoal:#1A1612;
   --charcoal-2:#242019;
   --ink:#211c16;
@@ -390,6 +390,73 @@ h3{font-size:1.25rem}
   .btn-lg{font-size:.98rem;padding:1rem 1.1rem;white-space:nowrap;width:100%}
   .hero-actions .btn-outline{width:100%}
 }
+
+
+/* ===================================================================
+   Match approved design (screenshot, Oct 2026)
+   =================================================================== */
+/* Promo banner: dark bar, orange highlights */
+.promo-banner{background:var(--charcoal);color:#e9e3d8;border-bottom:1px solid rgba(255,255,255,.08);font-size:.86rem;padding:.6rem 0}
+.promo-banner strong{color:var(--gold);font-weight:600}
+
+/* Header phone: orange pill */
+.header-phone{background:var(--gold);color:var(--charcoal);padding:.45rem 1.25rem .45rem 1rem;border-radius:999px;gap:.75rem;
+  box-shadow:0 6px 20px rgba(237,130,50,.35);font-size:1.12rem;margin-left:auto;margin-right:1rem}
+.header-phone:hover{color:var(--charcoal);background:#f08f45}
+.header-phone .icon{width:1.15rem;height:1.15rem;padding:0;background:none;color:var(--charcoal);border-radius:0}
+.header-phone-label{color:rgba(26,22,18,.72);font-size:.62rem;letter-spacing:.12em;margin-bottom:.15rem}
+@media(max-width:680px){.header-phone{padding:.4rem .8rem}}
+
+/* Inner-page hero: blurred plumbing photo */
+.hero-inner{background:var(--charcoal);overflow:hidden;padding:5.25rem 0 4.5rem}
+.hero-inner::before{content:"";position:absolute;inset:-30px;
+  background:url('https://images.unsplash.com/photo-1673870861507-d72aa6855d89?q=80&w=1600&auto=format&fit=crop') center/cover no-repeat;
+  filter:blur(7px);transform:scale(1.05)}
+.hero-inner .hero-overlay{position:absolute;inset:0;background:linear-gradient(rgba(20,16,10,.66),rgba(20,16,10,.8))}
+.hero-inner .hero-content{position:relative;z-index:1}
+.hero-inner h1{font-size:clamp(2.1rem,5.2vw,3.7rem)}
+.hero-eyebrow a{color:var(--gold)}
+.badge{background:rgba(255,255,255,.14);border-color:rgba(237,130,50,.55)}
+.badge .icon{color:#fff!important}
+.hero-actions .btn-lg{padding:1.15rem 2.2rem;font-size:1.2rem}
+.hero-actions .btn-outline{padding:1.15rem 1.6rem}
+
+/* Service cards */
+.icon-card{padding-top:1.25rem;box-shadow:0 6px 22px rgba(20,16,10,.06)}
+.icon-card:hover{transform:translateY(-4px);box-shadow:0 14px 32px rgba(20,16,10,.1)}
+.icon-card-icon{width:50px;height:50px;margin:0 1.25rem;border-radius:50%;background:var(--light);border:1px solid var(--line);color:var(--gold-dark)}
+.icon-card-icon .icon{width:22px;height:22px}
+.icon-card .card-body{padding:1.1rem 1.25rem 1.4rem}
+.icon-card .card-body h3{font-size:1.18rem;margin-bottom:.45rem}
+.icon-card-price{margin-top:0;padding-top:.75rem;font-size:.82rem;text-transform:none;letter-spacing:.01em;color:var(--gold-dark)}
+.cards.icon-cards{gap:1.4rem}
+
+/* Feature banner: light panel */
+.feature-banner{background:var(--light);border:1px solid var(--line);box-shadow:none;grid-template-columns:48% 52%;margin-top:1.4rem}
+.feature-banner-media img{min-height:380px}
+.feature-banner-body{color:var(--ink)}
+.feature-banner-body h3{color:var(--charcoal);font-size:1.4rem;margin-bottom:.55rem}
+.feature-banner-body p{color:var(--gray)}
+.feature-banner .card-tag{margin-bottom:1.1rem}
+
+/* Pricing tiles */
+.pricing-amount::before{content:none}
+.pricing-amount{font-size:2.1rem}
+.pricing-chip{padding:1.7rem 1rem 1.5rem;gap:.6rem;box-shadow:0 6px 22px rgba(20,16,10,.06)}
+
+/* FAQ */
+.faq-list{max-width:760px}
+.faq-q{font-family:var(--font-body);text-transform:none;letter-spacing:0;font-weight:600;font-size:1.02rem;color:var(--ink)}
+.faq-item{border-radius:12px}
+
+/* Footer social */
+.footer-social a{background:#221e17;border-color:rgba(255,255,255,.08)}
+:root{--maxw:1160px}
+.hero-inner{padding:4.85rem 0 4.3rem}
+.feature-banner-media img{min-height:400px}
+.btn-lg{padding:1.15rem 2.2rem;font-size:1.2rem}
+.icon-card .card-body h3{font-size:1.28rem}
+.footer-brand p{max-width:300px}
 
   </style>
 
